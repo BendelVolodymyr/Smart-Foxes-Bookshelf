@@ -12,37 +12,38 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
     rel="stylesheet">
   
-  <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/assets/toggle_theme-e463d6d1.js"></script>
+  <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/assets/toggle_theme-445b1a1a.js"></script>
   <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/assets/back_to_top-dba622ab.js"></script>
-  <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/shopping_list-edc8a2f3.css">
+  <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/shopping_list-b03bf3f7.css">
 </head>
 
 <body class="theme-light">
    
 <header class="header">
     <div class="container header-container">
-    <nav class="header-navigation">
+    <nav class="header-navigation nav-list">
     <a class="logo" href="index.html">
         <svg class="logo-icon" width="24" height="24">
-            <use href="../img/sprite.svg#icon-logo"></use>
+            <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-logo"></use>
         </svg>
         <svg class="logo-text" width="77" height="13">
-            <use href="../img/sprite.svg#icon-bookshelf"></use>
+            <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-bookshelf"></use>
         </svg>
         </a>
             <ul class="header-nav-list">
                 <li class="nav-item">
-                    <a class="header-link header-link-home" href="#">Home</a>
+                    <a class="header-link  nav-link " href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="basket basket-on header-link " href="#">
+                <li class="nav-item shop-item">
+                    <a class="basket header-link  nav-link " href="#">
                         Shopping list
                         <span>
                             <svg class="icon-basket" width="20" height="20">
-                            <use href="../img/sprite.svg#icon-shop"></use>
+                            <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-shop"></use>
                         </svg>
                     </span>
-                      </a>
+                 </a>     
+                      
                 </li>
             </ul>
     </nav>
@@ -57,26 +58,26 @@
         <div class="header-button">
             <button class="acount-log-in" data-modal-open>Sign up
               <svg class="icon-log" width="20" height="20">
-                    <use href="../img/sprite.svg#icon-arrow-narrow-right"></use>
+                    <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-arrow-narrow-right"></use>
                 </svg>  
             </button>
         </div>
 
 
-        <button class="mobile-menu-open-btn js-open-menu"  data-menu-open>
+        <button class="mobile-menu-open-btn js-open-menu"  data-mobile-menu-open>
             <svg class="mobile-menu-open-icon" width="28" height="28">
                <use href="../img/sprite.svg#icon-align-left"></use>
             </svg>
-      </div>        
-           <!-- </button>
-            <button class="mobile-menu-close-btn js-close-menu" data-menu-close>
+           </button> 
+           <button class="mobile-menu-close-btn js-close-menu" data-mobile-menu-close>
             <svg class="mobile-menu-close-icon" width="28" height="28">
                 <use href="../img/sprite.svg#icon-close"></use>
             </svg>
         </button> 
-        </div> -->
+      </div>         
+        </div> 
            
-        <!-- <div class="mobile-menu js-menu-container" data-menu>
+       <div class="mobile-menu js-menu-container" data-mobile-menu>
             <div class="container mobile-container">
         
                 <div class="mobile-header-button">
@@ -87,8 +88,10 @@
                     </button>
                 </div>
         
+
+
             </div>
-             -->
+            
         
        
     </div>
@@ -156,7 +159,44 @@
 
     </section>
   </main>
-  
+  <div class="pagination-container container ">
+    <div class="pagination-arrows">
+    <button class ="pagination-btn-left">
+        <svg class="pagintaion-double-previous-btn" width="24"
+            heigth="24" viewBox="0 0 24 24">
+            <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-left"></use>
+        </svg>
+        <svg class="pagintaion-double-previous-btn" width="24"
+        heigth="24" viewBox="0 0 24 24">
+        <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-left"></use>
+    </svg>
+        
+        </button>
+    <button class ="pagination-btn-left">
+        <svg class="pagintaion-previous-btn" width="24"
+        heigth="24" viewBox="0 0 24 24">
+        <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-left"></use>
+    </svg></button>
+</div> 
+<div class="pagination-pages">
+    <button class="pagination-pages-btn"><span class="pagination-pages-numbers">1</span></button>
+</div>
+<div class="pagination-arrows">
+    <button class ="pagination-btn-right"><svg class="pagination-next-btn" width="24"
+        heigth="24" viewBox="0 0 24 24">
+        <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-right"></use>
+    </svg></button>
+    <button class ="pagination-btn-right">
+        <svg class="pagination-double-next-btn" width="24"
+        heigth="24" viewBox="0 0 24 24" >
+        <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-right"></use>
+    </svg>
+    <svg class="pagination-double-next-btn" width="24"
+    heigth="24" viewBox="0 0 24 24" >
+    <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-right"></use>
+</svg></button>
+</div>
+</div>
   <div class="back-to-top is-hidden"><button class="back-to-top__button"><svg class="back-to-top__svg" width="24"
             heigth="24" viewBox="0 0 24 24">
             <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#back-to-top"></use>
