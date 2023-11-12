@@ -97,6 +97,16 @@
   overflow-y: scroll;
 }
 
+.all-categories-container::-webkit-scrollbar-thumb {
+  width: 8px;
+  height: 167px; 
+  border-radius: 12px;
+  color: #E0E0E0;
+}
+.all-categories-container::-webkit-scrollbar-button{
+  width: 0;
+}
+
 @media screen and (min-width: 768px) {
   .all-categories-container {
     width: 337px;
@@ -115,7 +125,7 @@
 .js-categories-list {
   line-height: 1.12;
   letter-spacing: -0.02em;
-  color:var(--primery-text);
+  color: var(--primery-text);
   width: 100%;
 }
 .categories-list-item {
@@ -126,10 +136,9 @@
   font-weight: 400;
   line-height: 24px; /* 133.333% */
   letter-spacing: -0.36px;
-
 }
 .categories-list-item:hover,
-.categories-list-item:focus{
+.categories-list-item:focus {
   cursor: pointer;
 }
 /* .categories-list-item.category-active {
