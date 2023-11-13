@@ -1,4 +1,4 @@
-import"./assets/toggle_theme-ccdc2c6d.js";import"./assets/back_to_top-62c9c55b.js";const c=localStorage.getItem("shoppingList"),h=JSON.parse(c),t=document.querySelector(".shopping-default"),r=document.querySelector(".shopping-title");function m(s){let o=[];s.map(({description:i,amazon_product_url:n,author:e,book_image:a,list_name:p,title:l,buy_links:g})=>{o.push(`<div class="shopping-box">
+import"./assets/toggle_theme-056aedf1.js";import"./assets/back_to_top-62c9c55b.js";const c=localStorage.getItem("shoppingList"),h=JSON.parse(c),t=document.querySelector(".shopping-default"),r=document.querySelector(".shopping-title");function m(s){let o=[];s.map(({description:i,amazon_product_url:n,author:e,book_image:a,list_name:p,title:l,buy_links:g})=>{o.push(`<div class="shopping-box">
         <div class="shopping-book-img">
           <img class="shopping-genre-img" src="${a}"
             alt="Title - 'WISH'" >
