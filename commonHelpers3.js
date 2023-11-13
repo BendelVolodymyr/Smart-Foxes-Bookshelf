@@ -1,2 +1,20 @@
-import"./assets/toggle_theme-ccdc2c6d.js";import"./assets/back_to_top-62c9c55b.js";const i=localStorage.getItem("shoppingList"),o=JSON.parse(i);console.log(o);function n(t){t.map(({_id:s,amazon_product_url:e,author:a,book_image:p,list_name:l,title:r,buy_links:c})=>{})}n(o);
+import"./assets/toggle_theme-ccdc2c6d.js";import"./assets/back_to_top-62c9c55b.js";const c=localStorage.getItem("shoppingList"),h=JSON.parse(c),t=document.querySelector(".shopping-default"),r=document.querySelector(".shopping-title");function m(s){let o=[];s.map(({description:i,amazon_product_url:n,author:e,book_image:a,list_name:p,title:l,buy_links:g})=>{o.push(`<div class="shopping-box">
+        <div class="shopping-book-img">
+          <img class="shopping-genre-img" src="${a}"
+            alt="Title - 'WISH'" >
+        </div>
+        <div class="shopping-book-info">
+          <h2 class="shopping-book-title">${l}</h2>
+          <span class="shopping-book-category">${p}</span>
+          <p class="shopping-book-discription">${i}</p>
+          <span class="shopping-book-author">${e}</span>
+          <a class="img__src-amazon" href="${n}"><img class="mdl-logo-amazon" src="../img/amazon.png" alt="logo amazon" width="62" height="19"></a>
+          <a class="img__src-books" href="${g[1].url}"><img class="mdl-logo-book" src="../img/books.png" alt="logo book" width="33" height="32"></a>
+        </div>
+        <button class="shopping-remove-btn" type="button">
+          <svg class="remove-btn" width="16" height="16">
+            <use href="../img/sprite.svg#icon-trash"></use>
+          </svg>
+        </button>
+      </div>`)}),s.length==[].length?t.classList.remove("is-hidden"):(t.classList.add("is-hidden"),r.insertAdjacentHTML("afterend",o))}m(h);
 //# sourceMappingURL=commonHelpers3.js.map
