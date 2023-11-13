@@ -1,75 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Smart-Foxes-Bookshelf/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Реєстрація</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    
+    <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/toggle_theme-ccdc2c6d.js">
+    <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/reg_start-c75cb23c.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/Smart-Foxes-Bookshelf/favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registration</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
-    rel="stylesheet" />
-  
-  <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/commonHelpers2.js"></script>
-  <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/toggle_theme-ccdc2c6d.js">
-  <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/reg_start-6b2125e0.css">
-</head>
-
-<body class="theme-light reg_start">
-  <main class="container">
-    <button onclick="openModal()">Open Modal</button>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <button class="close" onclick="closeModal()">
-          <svg class="close-form-icon" viewBox="0 0 32 32">
-            <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-close"></use>
-          </svg>
-        </button>
-        <div class="form_container" id="form_content_container">
-          <div class="form_content_inner_container">
-            <!-- Форма реєстрації -->
-            <div class="registration_form" id="registration_form">
-              <input type="text" id="registration_name" class="form-input" placeholder="Name" />
-              <input type="email" id="registration_email" class="form-input" placeholder="Email" /><svg
-                class="icon-email" viewBox="0 0 28 28">
-                <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#email"></use>
-              </svg>
-
-              <input type="password" id="registration_password" class="form-input" placeholder="Password" /><svg
-                class="icon-password" viewBox="0 0 28 28">
-                <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-lock"></use>
-              </svg>
-              <button onclick="register()" class="form-button">
-                Sign Up
-              </button>
-            </div>
-            <!-- Форма логіну -->
-            <div id="login_form" style="display: none">
-              <input type="email" id="login_email" class="form-input" placeholder="Email" />
-              <input type="password" id="login_password" class="form-input" placeholder="Password" />
-              <button onclick="login()" class="form-button">Sign In</button>
-            </div>
-            <!-- Перемикачі -->
-            <div class="toggle_buttons" id="toggle_buttons">
-              <button onclick="showRegistrationForm()" class="register-toggle active">
-                Sign Up
-              </button>
-              <button onclick="showLoginForm()" class="login-toggle">
-                Sign In
-              </button>
+  <body class="theme-light reg_start" id="reg_start">
+    <main class="container">
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <button class="close" id="closeModalButton">
+            <svg class="close-form-icon" viewBox="0 0 32 32">
+              <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-close"></use>
+            </svg>
+          </button>
+          <div class="form_container" id="form_content_container">
+            <div class="form_content_inner_container">
+              <!-- Форма реєстрації -->
+              <div class="registration_form" id="registration_form">
+                <input
+                  type="text"
+                  id="registration_name"
+                  class="form-input"
+                  placeholder="Name"
+                />
+                <input
+                  type="email"
+                  id="registration_email"
+                  class="form-input"
+                  placeholder="E-mail Address"
+                />
+                <svg class="icon-email" viewBox="0 0 28 28">
+                  <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#email"></use>
+                </svg>
+                <input
+                  type="password"
+                  id="registration_password"
+                  class="form-input"
+                  placeholder="Password"
+                />
+                <svg class="icon-password" viewBox="0 0 28 28">
+                  <use href="/Smart-Foxes-Bookshelf/assets/sprite-8744e831.svg#icon-lock"></use>
+                </svg>
+                <button class="form-button" id="registerButton">
+                  Registration
+                </button>
+              </div>
+              <!-- Форма входу -->
+              <div id="login_form" class="login_form" style="display: none">
+                <input
+                  type="email"
+                  id="login_email"
+                  class="form-input"
+                  placeholder="E-mail Address"
+                />
+                <input
+                  type="password"
+                  id="login_password"
+                  class="form-input"
+                  placeholder="Password"
+                />
+                <button class="form-button" id="loginButton">Log In</button>
+                <button id="googleSignInButton">Log in with Google</button>
+              </div>
+              <!-- Перемикачі -->
+              <div class="toggle_buttons clicked" id="toggle_buttons">
+                <button class="register-toggle" id="showRegistrationFormButton">
+                  Create a profile
+                </button>
+                <button class="login-toggle" id="showLoginFormButton">
+                  Log In
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Скрипки статистики бази даних -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-  </main>
-  
-</body>
-
+      <!-- Скрипти для бази даних Firebase -->
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    </main>
+    
+  </body>
 </html>
