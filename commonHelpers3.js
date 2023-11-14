@@ -1,4 +1,4 @@
-import"./assets/toggle_theme-056aedf1.js";import{a as r,b as h,i as d}from"./assets/back_to_top-d30278cc.js";const t=document.querySelector(".card");window.addEventListener("load",()=>{setInterval(()=>{const s=screen.width;Number(s)>1439?t.classList.remove("is-hidden"):t.classList.add("is-hidden")},1e3)});const m=localStorage.getItem("shoppingList"),u=JSON.parse(m),i=document.querySelector(".shopping-default"),b=document.querySelector(".shopping-title");function v(s){let o=[];s.map(({description:e,amazon_product_url:n,author:a,book_image:c,list_name:l,title:p,buy_links:g})=>{o.push(`<div class="shopping-box">
+import"./assets/toggle_theme-056aedf1.js";import{a as r,b as h,i as d}from"./assets/back_to_top-fd0c6f67.js";const t=document.querySelector(".card");window.addEventListener("load",()=>{setInterval(()=>{const s=screen.width;Number(s)>1439?t.classList.remove("is-hidden"):t.classList.add("is-hidden")},1e3)});const m=localStorage.getItem("shoppingList"),u=JSON.parse(m),i=document.querySelector(".shopping-default"),b=document.querySelector(".shopping-title");function v(s){let o=[];s.map(({description:e,amazon_product_url:n,author:a,book_image:c,list_name:l,title:p,buy_links:g})=>{o.push(`<div class="shopping-box">
         <div class="shopping-book-img">
           <img class="shopping-genre-img" src="${c}"
             alt="Title - 'WISH'" >
@@ -13,7 +13,7 @@ import"./assets/toggle_theme-056aedf1.js";import{a as r,b as h,i as d}from"./ass
           <a class="img__src-books" href="${g[1].url}"><img class="mdl-logo-book" src="${h}" alt="logo book" width="33" height="32"></a>
         </div>
         <button class="shopping-remove-btn" type="button">
-          <svg class="remove-btn" width="16" height="16">
+          <svg class="remove-btn" width="16" height="16" viewBox="0 0 32 32">
             <use href="${d}#icon-trash"></use>
           </svg>
         </button>
