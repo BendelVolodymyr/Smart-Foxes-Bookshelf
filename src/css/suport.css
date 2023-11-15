@@ -12,15 +12,16 @@
 .title {
   color: #FFF;
 
-font-family: DM Sans;
-font-size: 24px;
-font-style: normal;
-font-weight: 700;
-line-height: 28px; /* 116.667% */
-letter-spacing: -0.96px;
+  font-family: DM Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  /* 116.667% */
+  letter-spacing: -0.96px;
 
 
- 
+
 
 }
 
@@ -30,19 +31,12 @@ letter-spacing: -0.96px;
   gap: 12px;
   margin-bottom: 30px;
 }
-.main-icon{
+
+.slider-btn-support {
   max-width: 32px;
-}
-.slider-btn-support{
-max-width: 32px;
-margin: 0 auto;
+  margin: 0 auto;
 
 
-}
-
-.main-icon {
-  width: 20px;
-  height: 32px;
 }
 
 .slider-btn-support {
@@ -54,10 +48,7 @@ margin: 0 auto;
 .expand-btn {}
 
 .icon {
-  /* стили для иконки */
-  width: 24px;
-  height: 24px;
-  margin-right: 7px;
+  width: 100%;
 }
 
 .list {

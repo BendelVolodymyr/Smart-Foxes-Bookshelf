@@ -20,7 +20,8 @@ const parsedSettings = JSON.parse(LOCAL_KEY);
 
 const shoppingDefaultEl = document.querySelector('.shopping-default');
 const shoppingTitleEl = document.querySelector('.shopping-title');
-
+const shoppingBox = document.querySelector('.shopping-box');
+const shoppingBoxContainer = document.querySelector('.shopping-box-container');
  export function createShopping(arr) {
      let result = [];
     arr.map(({description, amazon_product_url, author, book_image, list_name, title, buy_links
@@ -53,12 +54,14 @@ const shoppingTitleEl = document.querySelector('.shopping-title');
      } else {
      
          shoppingDefaultEl.classList.add('is-hidden');
-         shoppingTitleEl.insertAdjacentHTML('afterend', result.join(''));
+         shoppingBoxContainer.insertAdjacentHTML('afterbegin', result.join(''));
     }   
-}
-const shoppingListContainer = document.querySelector('.shopping-title');
+} 
 
-shoppingListContainer.addEventListener('click', (event) => {
+shoppingBoxContainer.addEventListener('click',
+ (event) => {
+
+ 
   const removeButton = event.target.closest('.shopping-remove-btn');
 
   if (removeButton) {
