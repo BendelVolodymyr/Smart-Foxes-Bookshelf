@@ -72,7 +72,7 @@ function getUserDataFromLocalStorage() {
 
 function closeModal() {
   elements.registrationForm.style.display = 'none';
-  // redirectToIndex();
+  redirectToIndex();
 }
 
 function register() {
