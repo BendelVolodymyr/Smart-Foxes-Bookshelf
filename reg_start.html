@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
-      rel="stylesheet"/>
+      rel="stylesheet"
+    />
     
     <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/toggle_theme-056aedf1.js">
@@ -27,7 +28,6 @@
           </button>
           <div class="form_container" id="form_content_container">
             <div class="form_content_inner_container">
-              <!-- Форма реєстрації -->
               <div class="registration_form" id="registration_form">
                 <input
                   type="text"
@@ -57,7 +57,6 @@
                   Registration
                 </button>
               </div>
-              <!-- Форма входу -->
               <div id="login_form" class="login_form" style="display: none">
                 <input
                   type="email"
@@ -74,9 +73,11 @@
                 <button class="form-button" id="loginButton">Log In</button>
                 <button id="googleSignInButton">Log in with Google</button>
               </div>
-              <!-- Перемикачі -->
               <div class="toggle_buttons" id="toggle_buttons">
-                <button class="register-toggle clicked" id="showRegistrationFormButton">
+                <button
+                  class="register-toggle clicked"
+                  id="showRegistrationFormButton"
+                >
                   Create a profile
                 </button>
                 <button class="login-toggle" id="showLoginFormButton">
@@ -86,11 +87,11 @@
             </div>
           </div>
         </div>
-      <!-- Скрипти для бази даних Firebase -->
-      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+      </div>
     </main>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     
   </body>
 </html>
