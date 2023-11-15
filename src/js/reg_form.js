@@ -231,7 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateUI(user) {
   if (user) {
     elements.usernameDisplay.textContent = user.displayName || user.email;
-
     elements.userDropdown.classList.remove('is-hidden');
     elements.signUpButton.style.display = 'none';
     elements.mobileActiveAcc.classList.remove('is-hidden');
