@@ -73,7 +73,7 @@
                 d="M32.001 13.939v-0.643c-0.157-0.030-0.329-0.052-0.524-0.052-0.628 0-0.972 0.284-0.972 1.092v0.486h-0.546v0.643h0.546v3.179h0.793v-3.179h0.703v-0.643h-0.703v-0.419c0-0.434 0.195-0.486 0.703-0.464z">
             </path>
         </symbol>
-        <symbol id="icon-icon-burger" viewBox="0 0 32 32">
+        <symbol id="icon-burger" viewBox="0 0 32 32">
             <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857"
                 d="M22.667 13.333h-18.667"></path>
             <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857"
