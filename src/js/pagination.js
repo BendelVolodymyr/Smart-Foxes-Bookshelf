@@ -21,9 +21,7 @@ const totalPages = Math.ceil(shoppingList.length / itemsPerPage);
 function createBtnMarkup (pageNumber) {
     const markup = `<button class="pagination-pages-btn"  data-page="${pageNumber}">
         <span class="pagination-pages-numbers">${pageNumber}</span></button>`;
-
-    paginationPages.insertAdjacentHTML('beforeend', markup);
-
+    paginationPages.insertAdjacentHTML('afterbegin', markup);
     const button = document.querySelector(`[data-page="${pageNumber}"]`);
     button.addEventListener('click', function () {
         currentPage = pageNumber;
@@ -46,13 +44,12 @@ function updateActivePageButton() {
 
 function displayItems() {
     const currentPageItems = chunkedArray[currentPage - 1];
-    console.log(currentPageItems);
     createShopping(currentPageItems);
 }
 
 function createBtnPages() {
     if (shoppingList.length > itemsPerPage) {
-        for (let i = 1; i <= totalPages; i++) {
+        for (let i = 2; i <= totalPages; i++) {
             createBtnMarkup(i);
         }
     }
@@ -63,15 +60,20 @@ function checkShoppingList() {
     if (shoppingList.length === 0) {
         pagination.classList.add('is-hidden');
     }
+    else
+    {
+        createBtnPages();
+        updateActivePageButton();
+    }
+ 
 }
 
 
 
 
-
 checkShoppingList();
-createBtnPages();
-updateActivePageButton();
+createBtnMarkup(1);
+
 
 
 

@@ -1,5 +1,6 @@
 import { getCategoryList, getBooksByCategory } from './BOOKS_API.js';
 import { createCardByGenre, addCardByGenre } from './categories_book.js';
+import { Notiflix } from 'notiflix';
 
 const elem = {
   allCategoriesContainer: document.querySelector('.all-categories-container'),
@@ -7,20 +8,20 @@ const elem = {
   allCategoriesListItem: document.querySelector('.categories-list-item'),
   categoriesBook: document.querySelector('.categories-books-all'),
   categoriesBooksTitle: document.querySelector('.categories-books-title'),
-  divForSeeMoreBtn: document.querySelector('.categories-books')
+  divForSeeMoreBtn: document.querySelector('.categories-books'),
+  firstListItem: document.querySelector('.js-categories-list li:first-of-type'),
 };
-const firstListItem = document.querySelector(
-  '.js-categories-list li:first-of-type'
-);
 
 elem.allCategoriesContainer.addEventListener('click', onCategoryClick);
 elem.allCategoriesContainer.addEventListener('click', clickAccent);
-elem.divForSeeMoreBtn.addEventListener('click', onBtnMoreClick)
+elem.divForSeeMoreBtn.addEventListener('click', onBtnMoreClick);
+elem.divForSeeMoreBtn.addEventListener('click', goBackBtn);
 
 // Функція створення розмітки
 
 function createMarkupCategoryList(arr) {
-  return arr
+  const sortedArr = arr.sort((a, b) => a.list_name.localeCompare(b.list_name));
+  return sortedArr
     .map(
       ({ list_name }) =>
         `<li class="categories-list-item js-categories-list-item" value="${list_name}" data-category='${list_name}'>${list_name}</li>`
@@ -37,12 +38,18 @@ getCategoryList()
       createMarkupCategoryList(object.data)
     );
   })
-  .catch(error => console.log(error));
+  .catch(err)
+  {
+    Notiflix.Report.failure('WHOOPS!',
+    'Something went wrong',
+    'Ok')
+};
+  
 
 // Акцент по кліку + preventDefault
 
 function clickAccent(evt) {
-  const isFirstElement = firstListItem === evt.target;
+  const isFirstElement = elem.firstListItem === evt.target;
 
   if (isFirstElement) {
     !evt.preventDefault();
@@ -96,6 +103,23 @@ function onBtnMoreClick(evt) {
     item.classList.remove('category-active');
     if (categ === categoryName) {
       item.classList.add('category-active');
+    }
+  });
+}
+
+// Клік по "Back to Best Sellers" button
+
+function goBackBtn (evt){
+  if (!evt.target.classList.contains('categories-books-back-btn')) {
+    return;
+  }
+  const backTostart = evt.target.dataset.btn;
+
+  const arrClass = [...elem.allCategoriesList.children];
+  arrClass.forEach(item => {
+    item.classList.remove('category-active');
+    if (backTostart) {
+      elem.firstListItem.classList.add('category-active');
     }
   });
 }

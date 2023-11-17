@@ -65,6 +65,7 @@
   align-items: center;
   position: relative;
   z-index: 20;
+  height: 28px;
 }
 
 .logo-icon {

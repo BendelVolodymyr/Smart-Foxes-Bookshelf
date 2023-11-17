@@ -155,6 +155,12 @@
   text-overflow: ellipsis;
 }
 
+@media only screen and (min-width: 768px) {
+  .shopping-book-category {
+    width: 100%;
+  }
+}
+
 .shopping-book-discription {
   color: var(--best-sellers-text-title-color);
   padding-top: 8px;
