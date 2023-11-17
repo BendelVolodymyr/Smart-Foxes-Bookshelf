@@ -71,7 +71,7 @@ function checkShoppingList() {
 
 
 
-checkShoppingList();
+checkShoppingList();//test
 createBtnMarkup(1);//knopka
 
 
