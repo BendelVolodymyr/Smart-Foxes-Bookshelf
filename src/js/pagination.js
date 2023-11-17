@@ -71,8 +71,10 @@ function checkShoppingList() {
  
 }
 
-checkShoppingList();
-createBtnPages(1);//test
+
+
+
+checkShoppingList();//test
 createBtnMarkup(1);//knopka
 
 
