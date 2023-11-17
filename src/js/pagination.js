@@ -55,23 +55,24 @@ function createBtnPages() {
     }
 }
 
+
+
+
 function checkShoppingList() {
-    const pagination = document.querySelector('.pagination-container');
-    if (shoppingList.length === 0) {
-        pagination.classList.add('is-hidden');
-    }
-    else
-    {
-        createBtnPages();
-        updateActivePageButton();
-    }
+    setInterval(() => {
+        if ( shoppingContainer.children.length == 0) {
+            pagination.classList.add('is-hidden');
+        }
+        if (shoppingContainer.children.length < itemsPerPage) {
+            updateActivePageButton(1);
+        }
+      }, 100);
+      pagination.classList.remove('is-hidden');
  
 }
 
-
-
-
-checkShoppingList();//test
+checkShoppingList();
+createBtnPages(1);//test
 createBtnMarkup(1);//knopka
 
 
