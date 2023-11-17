@@ -5,14 +5,12 @@ import iconTrash from '../img/sprite.svg';
 const suportEl = document.querySelector('.card');
 
 window.addEventListener('load', () => {
-  setInterval(() => {
     const widthWindow = screen.width;
     if (Number(widthWindow) > Number(1439)) {
       suportEl.classList.remove('is-hidden');
     } else {
       suportEl.classList.add('is-hidden');
     };
-  }, 250);
 });
 
 const LOCAL_KEY = localStorage.getItem('shoppingList');
