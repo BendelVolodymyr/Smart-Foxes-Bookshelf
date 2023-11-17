@@ -2,8 +2,8 @@ const u=document.getElementById("nav-menu"),s=u.getElementsByTagName("a"),A=docu
       <div class="list-item">
         <span>${t.id}</span>
         <a href="${t.url}" class="list-item__image" target="_blank">
-          <img class="number-icon" src="${t.img}" alt="${t.title}" class="icon">
+          <img class="number-icon icon" src="${t.img}" alt="${t.title}">
         </a>
       </div>
     `})};a.addEventListener("click",()=>{a.classList.toggle("expanded"),H()?l(c.slice(-6)):l(c.slice(0,-3))});l(c.slice(0,-3));const r=document.querySelector(".back-to-top");r.addEventListener("click",L);window.onscroll=()=>{Q()};function L(){window.scrollTo({top:0,behavior:"smooth"})}function Q(){document.body.scrollTop>20||document.documentElement.scrollTop>20?r.classList.remove("is-hidden"):r.classList.add("is-hidden")}export{y as a,C as b,J as i};
-//# sourceMappingURL=back_to_top-803f1318.js.map
+//# sourceMappingURL=back_to_top-d049b0b6.js.map
