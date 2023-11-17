@@ -1,17 +1,17 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";import{a as k,b as $,i as y}from"./assets/back_to_top-2d3d785b.js";const g=document.querySelector(".card");window.addEventListener("load",()=>{const t=screen.width;Number(t)>1439?g.classList.remove("is-hidden"):g.classList.add("is-hidden")});const I=localStorage.getItem("shoppingList");let n=JSON.parse(I);const l=document.querySelector(".shopping-default"),a=document.querySelector(".shopping-box-container");function c(t){a.innerHTML="";let e=[];t.map(({description:o,amazon_product_url:u,author:m,book_image:f,_id:b,list_name:v,title:L,buy_links:S})=>{e.push(`<div class="shopping-box" data-item-id="${b}">
+import"./assets/modulepreload-polyfill-3cfb730f.js";import{a as I,b as $,i as y}from"./assets/back_to_top-2d3d785b.js";const r=document.querySelector(".card");window.addEventListener("load",()=>{const t=screen.width;Number(t)>1439?r.classList.remove("is-hidden"):r.classList.add("is-hidden")});const w=localStorage.getItem("shoppingList");let o=JSON.parse(w);const g=document.querySelector(".shopping-default"),a=document.querySelector(".shopping-box-container");function c(t){a.innerHTML="";let s=[];t.map(({description:n,amazon_product_url:m,author:f,book_image:b,_id:v,list_name:L,title:S,buy_links:k})=>{s.push(`<div class="shopping-box" data-item-id="${v}">
       <div class="shopping-book-img">
-        <img class="shopping-genre-img" src="${f}" alt="Title - 'WISH'">
+        <img class="shopping-genre-img" src="${b}" alt="Title - 'WISH'">
       </div>
       <div class="shopping-book-info">
-        <h2 class="shopping-book-title">${L}</h2>
-        <span class="shopping-book-category">${v}</span>
-        <p class="shopping-book-discription">${o}</p>
-        <span class="shopping-book-author">${m}</span>
+        <h2 class="shopping-book-title">${S}</h2>
+        <span class="shopping-book-category">${L}</span>
+        <p class="shopping-book-discription">${n}</p>
+        <span class="shopping-book-author">${f}</span>
 
-        <a class="img__src-amazon" href="${u}">
-          <img class="mdl-logo-amazon" src="${k}" alt="logo amazon" width="62" height="19">
+        <a class="img__src-amazon" href="${m}">
+          <img class="mdl-logo-amazon" src="${I}" alt="logo amazon" width="62" height="19">
         </a>
-        <a class="img__src-books" href="${S[1].url}">
+        <a class="img__src-books" href="${k[1].url}">
           <img class="mdl-logo-book" src="${$}" alt="logo book" width="33" height="32">
         </a>
       </div>
@@ -20,6 +20,6 @@ import"./assets/modulepreload-polyfill-3cfb730f.js";import{a as k,b as $,i as y}
           <use href="${y}#icon-trash"></use>
         </svg>
       </button>
-    </div>`)}),t.length==[].length?l.classList.remove("is-hidden"):(l.classList.add("is-hidden"),a.insertAdjacentHTML("afterbegin",e.join("")))}c(n);a.addEventListener("click",t=>{const e=t.target.closest(".shopping-remove-btn");if(e){const s=e.closest(".shopping-box");if(s){const o=s.dataset.itemId;w(o),n=JSON.parse(localStorage.getItem("shoppingList")),c(n)}}});function w(t){const e=n.findIndex(s=>s._id===t);e!==-1&&(n.splice(e,1),localStorage.setItem("shoppingList",JSON.stringify(n)))}const q=localStorage.getItem("shoppingList"),i=JSON.parse(q),x=document.querySelector(".pagination-pages");document.querySelector(".shopping-container");let p=3,r=1;function B(t,e){const s=[];for(let o=0;o<t.length;o+=e)s.push(t.slice(o,o+e));return s}const P=B(i,p),A=Math.ceil(i.length/p);function d(t){const e=`<button class="pagination-pages-btn"  data-page="${t}">
-        <span class="pagination-pages-numbers">${t}</span></button>`;x.insertAdjacentHTML("afterbegin",e),document.querySelector(`[data-page="${t}"]`).addEventListener("click",function(){r=t,E(),h()})}function h(){document.querySelectorAll(".pagination-pages-btn").forEach(e=>{parseInt(e.dataset.page)===r?e.classList.add("pagination-pages-btn-active"):e.classList.remove("pagination-pages-btn-active")})}function E(){const t=P[r-1];c(t)}function _(){if(i.length>p)for(let t=2;t<=A;t++)d(t)}function T(){const t=document.querySelector(".pagination-container");i.length===0?t.classList.add("is-hidden"):(_(),h())}T();d(1);
+    </div>`)}),t.length==[].length?g.classList.remove("is-hidden"):(g.classList.add("is-hidden"),a.insertAdjacentHTML("afterbegin",s.join("")))}c(o);a.addEventListener("click",t=>{const s=t.target.closest(".shopping-remove-btn");if(s){const e=s.closest(".shopping-box");if(e){const n=e.dataset.itemId;x(n),o=JSON.parse(localStorage.getItem("shoppingList")),c(o)}}});function x(t){const s=o.findIndex(e=>e._id===t);s!==-1&&(o.splice(s,1),localStorage.setItem("shoppingList",JSON.stringify(o)))}const B=localStorage.getItem("shoppingList"),p=JSON.parse(B),P=document.querySelector(".pagination-pages"),d=document.querySelector(".shopping-container");let i=3,l=1;function q(t,s){const e=[];for(let n=0;n<t.length;n+=s)e.push(t.slice(n,n+s));return e}const A=q(p,i),E=Math.ceil(p.length/i);function h(t){const s=`<button class="pagination-pages-btn"  data-page="${t}">
+        <span class="pagination-pages-numbers">${t}</span></button>`;P.insertAdjacentHTML("afterbegin",s),document.querySelector(`[data-page="${t}"]`).addEventListener("click",function(){l=t,_(),u()})}function u(){document.querySelectorAll(".pagination-pages-btn").forEach(s=>{parseInt(s.dataset.page)===l?s.classList.add("pagination-pages-btn-active"):s.classList.remove("pagination-pages-btn-active")})}function _(){const t=A[l-1];c(t)}function T(){if(p.length>i)for(let t=2;t<=E;t++)h(t)}function M(){setInterval(()=>{d.children.length==0&&pagination.classList.add("is-hidden"),d.children.length<i&&u()},100),pagination.classList.remove("is-hidden")}M();T();h(1);
 //# sourceMappingURL=commonHelpers3.js.map
