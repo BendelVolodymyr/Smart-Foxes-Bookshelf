@@ -93,6 +93,3 @@ function removeBookFromShoppingList(itemId) {
     localStorage.setItem('shoppingList', JSON.stringify(parsedSettings));
   }
 }
-
-
-
