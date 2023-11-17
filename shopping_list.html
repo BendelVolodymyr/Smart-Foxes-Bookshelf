@@ -5,18 +5,17 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/Smart-Foxes-Bookshelf/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bookshelf</title>
+  <title>Bookshelf-Shopping</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
     rel="stylesheet">
   
-  <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/commonHelpers.js"></script>
+  <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/commonHelpers3.js"></script>
   <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/modulepreload-polyfill-3cfb730f.js">
   <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/back_to_top-2d3d785b.js">
-  <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/vendor-e6655478.js">
-  <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/index-62d6479e.css">
+  <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/shopping_list-479c3b2a.css">
 </head>
 
 <body class="theme-light">
@@ -158,16 +157,38 @@
         </div>
     </div>
 </header>
-  <main>
-    <section class="container positioning">
-      <div class="all-categories-container">
-  <ul class="categories-list js-categories-list">
-    <li class="categories-list-item js-categories-list-item category-active js-all-categoties">
-      <a href="./index.html">All categories</a>
-    </li>
-  </ul>
-</div>
-      <div class="card">
+  <main class="main container">
+    <section class="shopping-container">
+      <h1 class="shopping-title">Shopping <span class="shooping-title-text">List</span></h1>
+      <div class="shopping-default">
+        <p class="shopping-default-text">This page is empty, add some books and proceed to order.</p>
+        <div class="shopping-default-img">
+          <img src="./img/shop_none.png" alt="shopping list is empty">
+        </div>
+      </div>
+      <div class="shopping-box-container">
+        <div class="shopping-box is-hidden">
+          <div class="shopping-book-img">
+            <img class="shopping-genre-img" src="https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg"
+              alt="Title - 'WISH'" width="100" height="142">
+          </div>
+          <div class="shopping-book-info">
+            <h2 class="shopping-book-title">Назва книги</h2>
+            <span class="shopping-book-category">Категорія</span>
+            <p class="shopping-book-discription">Опис книги</p>
+            <span class="shopping-book-author">Автор</span>
+            <a href=""></a>
+            <a href=""></a>
+          </div>
+          <button class="shopping-remove-btn" type="button">
+            <svg class="remove-btn" width="16" height="16">
+              <use href="/Smart-Foxes-Bookshelf/assets/sprite-c358ff04.svg#icon-trash"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <div class="card">
     <div class="wrap-title">
         <h2 class="title">Support Ukraine</h2>
         <div class="card_gern"><svg class="icon">
@@ -183,12 +204,42 @@
 
     </div>
 </div>
-      <div class="categories-books">
-  <h1 class=" categories-books-title">Best Sellers <span class="categories-books-title-accent">Books</span></h1>
-  <span class="loader"></span>
-  <div class="categories-books-all"></div>
+  </main>
+  <div class="pagination-container container ">
+    <div class="pagination-arrows">
+        <button class="pagination-btn-left" id="pagination-startBtn">
+            <svg class="pagintaion-double-previous-btn" width="24" heigth="24" viewBox="0 0 24 24">
+                <use href="/Smart-Foxes-Bookshelf/assets/sprite-c358ff04.svg#icon-pagination-left"></use>
+            </svg>
+            <svg class="pagintaion-double-previous-btn" width="24" heigth="24" viewBox="0 0 24 24">
+                <use href="/Smart-Foxes-Bookshelf/assets/sprite-c358ff04.svg#icon-pagination-left"></use>
+            </svg>
+
+        </button>
+        <button class="pagination-btn-left" id="pagination-prevNext">
+            <svg class="pagintaion-previous-btn" width="24" heigth="24" viewBox="0 0 24 24">
+                <use href="/Smart-Foxes-Bookshelf/assets/sprite-c358ff04.svg#icon-pagination-left"></use>
+            </svg></button>
+    </div>
+    <div class="pagination-pages">
+        <!-- <button class="pagination-pages-btn" id="paginations-links"><span class="pagination-pages-numbers">1</span></button> -->
+
+    </div>
+    <div class="pagination-arrows">
+        <button class="pagination-btn-right" id="pagination-prevNext"><svg class="pagination-next-btn" width="24"
+                heigth="24" viewBox="0 0 24 24">
+                <use href="/Smart-Foxes-Bookshelf/assets/sprite-c358ff04.svg#icon-pagination-right"></use>
+            </svg></button>
+        <button class="pagination-btn-right" id="pagination-endBtn">
+            <svg class="pagination-double-next-btn" width="24" heigth="24" viewBox="0 0 24 24">
+                <use href="/Smart-Foxes-Bookshelf/assets/sprite-c358ff04.svg#icon-pagination-right"></use>
+            </svg>
+            <svg class="pagination-double-next-btn" width="24" heigth="24" viewBox="0 0 24 24">
+                <use href="/Smart-Foxes-Bookshelf/assets/sprite-c358ff04.svg#icon-pagination-right"></use>
+            </svg></button>
+    </div>
 </div>
-      <div class="back-to-top is-hidden"><button class="back-to-top__button"><svg class="back-to-top__svg" width="24"
+  <div class="back-to-top is-hidden"><button class="back-to-top__button"><svg class="back-to-top__svg" width="24"
             viewBox="0 0 24 24">
             <use href="/Smart-Foxes-Bookshelf/assets/sprite-c358ff04.svg#back-to-top"></use>
         </svg></button></div>
