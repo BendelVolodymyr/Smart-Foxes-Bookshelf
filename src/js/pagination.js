@@ -72,7 +72,7 @@ function checkShoppingList() {
 
 
 checkShoppingList();
-createBtnMarkup(1);
+createBtnMarkup(1);//knopka
 
 
 
