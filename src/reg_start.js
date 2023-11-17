@@ -1,2 +1,1 @@
-import "./js/reg_form.js";
-import "./js/header.js";
+import './js/reg_form.js';
