@@ -136,10 +136,10 @@
   letter-spacing: -0.64px;
   text-transform: uppercase;
   width: 144px;
-    height: 14px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  height: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .shopping-book-category {
@@ -347,13 +347,21 @@
   }
 }
 
+.card {
+  margin: 20px auto 20px auto;
+}
+
 @media screen and (min-width: 1440px) {
-  .main.container {
+  .shopping-container {
     display: grid;
     grid-template-columns: 356px 996px;
   }
 
-  .shopping-container {
+  .shopping-default-text {
+    grid-column: 2;
+  }
+
+  .shopping-title {
     grid-column: 2;
   }
 
