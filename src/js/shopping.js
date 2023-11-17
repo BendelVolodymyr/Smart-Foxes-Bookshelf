@@ -1,7 +1,7 @@
 import amazonImg from '/amazon.png';
 import booksImg from '/books.png';
 import iconTrash from '../img/sprite.svg';
-
+import { createBtnPages, paginationPages } from "./pagination";
 const suportEl = document.querySelector('.card');
 
 window.addEventListener('load', () => {
@@ -20,6 +20,7 @@ let parsedSettings = JSON.parse(LOCAL_KEY);
 
 const shoppingDefaultEl = document.querySelector('.shopping-default');
 const shoppingBoxContainer = document.querySelector('.shopping-box-container');
+
 
 export function createShopping(arr) {
   
@@ -60,8 +61,9 @@ export function createShopping(arr) {
     shoppingBoxContainer.insertAdjacentHTML('afterbegin', result.join(''));
   }
 }
-
-createShopping(parsedSettings);
+const itemsPerPage = 3;
+let chaunkParsedSettings = parsedSettings.slice(0,itemsPerPage)
+createShopping(chaunkParsedSettings);
 
 shoppingBoxContainer.addEventListener('click', (event) => {
   const removeButton = event.target.closest('.shopping-remove-btn');
@@ -74,27 +76,41 @@ shoppingBoxContainer.addEventListener('click', (event) => {
 
       removeBookFromShoppingList(itemId);
 
-      
+      // createBtnPages();
       parsedSettings = JSON.parse(localStorage.getItem('shoppingList'));
-
+      chaunkParsedSettings = parsedSettings.slice(0,itemsPerPage)
       
-      createShopping(parsedSettings);
+      createShopping(chaunkParsedSettings);
+     
     }
   }
 });
 
 function removeBookFromShoppingList(itemId) {
   // Знаходимо індекс книги за itemId
+  
   const indexToRemove = parsedSettings.findIndex(item => item._id === itemId);
-  if (indexToRemove !== -1) {
+  if (shoppingBoxContainer.children.length == 1) {
+    
+    let currentPage = 0 ;
+    
+    paginationPages.innerHTML = '';
+    createBtnPages(currentPage);
+  }
+  
+  if (indexToRemove !== -1  )  {
     // Видаляємо тільки вибрану книгу за індексом
     parsedSettings.splice(indexToRemove, 1);
     
-
     // Оновлюємо localStorage
     localStorage.setItem('shoppingList', JSON.stringify(parsedSettings));
   }
+ 
+
+
+
 }
+
 
 
 
