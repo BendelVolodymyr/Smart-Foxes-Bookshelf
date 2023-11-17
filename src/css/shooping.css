@@ -141,6 +141,11 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+@media only screen and (min-width: 768px) {
+  .shopping-book-title {
+    width: 100%;
+  }
+}
 
 .shopping-book-category {
   padding-top: 4px;
@@ -206,6 +211,7 @@
 @media only screen and (min-width: 768px) {
   .shopping-book-author {
     padding-top: 48px;
+    width: 100%;
   }
 }
 
