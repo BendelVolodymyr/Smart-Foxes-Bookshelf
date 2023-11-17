@@ -38,13 +38,9 @@ getCategoryList()
       createMarkupCategoryList(object.data)
     );
   })
-  .catch(err)
-  {
-    Notiflix.Report.failure('WHOOPS!',
-    'Something went wrong',
-    'Ok')
-};
-  
+  .catch(err => {
+    Notiflix.Report.failure('WHOOPS! Something went wrong', err, 'Ok');
+  });
 
 // Акцент по кліку + preventDefault
 
@@ -88,7 +84,6 @@ async function onCategoryClick(evt) {
   )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
 }
 
-
 // Акцент на категорії при кліку на SeeMore
 
 function onBtnMoreClick(evt) {
@@ -109,7 +104,7 @@ function onBtnMoreClick(evt) {
 
 // Клік по "Back to Best Sellers" button
 
-function goBackBtn (evt){
+function goBackBtn(evt) {
   if (!evt.target.classList.contains('categories-books-back-btn')) {
     return;
   }
