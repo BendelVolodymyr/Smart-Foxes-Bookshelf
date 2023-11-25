@@ -3,10 +3,10 @@ import { createShopping } from './shopping';
 const storedData = localStorage.getItem('shoppingList');
 const shoppingList = JSON.parse(storedData);
 const paginationPages = document.querySelector('.pagination-pages');
-const shoppingContainer = document.querySelector('.shopping-container');
+const pagination = document.querySelector('.pagination-container');
+const shoppingContainer = document.querySelector('.shopping-box-container');
 let itemsPerPage = 3; 
 let currentPage = 1;
-
 function chunkArray(array, chunkSize) {
     const result = [];
     for (let i = 0; i < array.length; i += chunkSize) {
@@ -55,24 +55,30 @@ function createBtnPages() {
     }
 }
 
+
+
+
 function checkShoppingList() {
-    const pagination = document.querySelector('.pagination-container');
-    if (shoppingList.length === 0) {
-        pagination.classList.add('is-hidden');
-    }
-    else
-    {
-        createBtnPages();
-        updateActivePageButton();
-    }
+    setInterval(() => {
+        
+        if ( shoppingContainer.children.length == 0) {
+            pagination.classList.add('is-hidden');
+        }
+        if (shoppingContainer.children.length < itemsPerPage) {
+            updateActivePageButton(1);
+            
+        }
+      }, 100);
+      
  
 }
 
 
 
 
-checkShoppingList();
-createBtnMarkup(1);
+checkShoppingList();//test
+createBtnPages(1);
+createBtnMarkup(1);//knopka
 
 
 
